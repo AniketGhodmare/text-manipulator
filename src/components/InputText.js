@@ -128,7 +128,8 @@ export default function InputText(props) {
                     <h3>{ExEmail}</h3>
                     {/* <p>{inText.split(" ").length} words  &  {inText.length} characters</p> */}
                     {/* <p> {inText.split(" ")[inText.split(" ").length -1] ===''? inText.split(/[ ]+/).length-1 :inText.split(/[ ]+/).length}</p> */}
-                    <p>{inText.split(" ")[inText.split(" ").length - 1] === '' ? (inText.split(/[ ]+/).length - 1) * 0.008 : inText.split(/[ ]+/).length * 0.008} minutes required to read your Text</p>
+                    {/* <p>{inText.split(" ")[inText.split(" ").length - 1] === '' ? (inText.split(/[ ]+/).length - 1) * 0.008 : inText.split(/[ ]+/).length * 0.008} minutes required to read your Text</p> */}
+                    <p>{inText.split(" ").filter((element) =>{ return element.length != 0}).length* 0.008} minutes required to read your Text</p>
                     <h4>Your Text Summery</h4>
                     <p>{inText.length > 0 ? inText : "Enter Text in TextBox to Preview"}</p>
                 </div>
